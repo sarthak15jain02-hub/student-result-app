@@ -9,8 +9,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/sarthak15jain02-hub
-/student-result-app.git'
+                git branch: 'main', url: 'https://github.com/sarthak15jain02-hub/student-result-app.git'
             }
         }
 
