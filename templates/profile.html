@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile | Student Result System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Roboto',sans-serif;background:#f1f3f4}
+    .navbar{background:#1a73e8;color:white;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    .navbar .brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:500}
+    .navbar .brand .material-icons{font-size:28px}
+    .nav-links{display:flex;gap:8px}
+    .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;padding:8px 16px;border-radius:6px;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:.2s}
+    .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.2);color:white}
+    .container{max-width:600px;margin:48px auto;padding:0 24px}
+    .profile-card{background:white;border-radius:16px;box-shadow:0 1px 4px rgba(0,0,0,.12);overflow:hidden}
+    .profile-header{background:linear-gradient(135deg,#1a73e8,#0d47a1);padding:40px;text-align:center;color:white}
+    .avatar{width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .avatar .material-icons{font-size:52px}
+    .profile-header h2{font-size:22px;font-weight:500}
+    .profile-header p{font-size:14px;opacity:.85;margin-top:4px}
+    .profile-body{padding:32px}
+    .info-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #f1f3f4}
+    .info-row:last-child{border-bottom:none}
+    .info-icon{width:40px;height:40px;border-radius:10px;background:#e8f0fe;display:flex;align-items:center;justify-content:center}
+    .info-icon .material-icons{color:#1a73e8;font-size:20px}
+    .info-text label{font-size:11px;font-weight:600;color:#9aa0a6;text-transform:uppercase;letter-spacing:.5px}
+    .info-text p{font-size:15px;color:#202124;margin-top:2px}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;color:#1a73e8;text-decoration:none;font-size:14px;font-weight:500}
+    .back-btn:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="brand"><span class="material-icons">school</span>Student Result System</div>
+  <div class="nav-links">
+    <a href="/dashboard"><span class="material-icons">dashboard</span>Dashboard</a>
+    <a href="/profile" class="active"><span class="material-icons">account_circle</span>Profile</a>
+    <a href="/logout"><span class="material-icons">logout</span>Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar"><span class="material-icons">account_circle</span></div>
+      <h2>{{ profile.name }}</h2>
+      <p>{{ profile.role }}</p>
+    </div>
+    <div class="profile-body">
+      <div class="info-row">
+        <div class="info-icon"><span class="material-icons">email</span></div>
+        <div class="info-text"><label>Email</label><p>{{ profile.email }}</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><span class="material-icons">business</span></div>
+        <div class="info-text"><label>Department</label><p>{{ profile.department }}</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><span class="material-icons">phone</span></div>
+        <div class="info-text"><label>Phone</label><p>{{ profile.phone }}</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><span class="material-icons">verified_user</span></div>
+        <div class="info-text"><label>Role</label><p>{{ profile.role }}</p></div>
+      </div>
+    </div>
+  </div>
+  <a href="/dashboard" class="back-btn"><span class="material-icons">arrow_back</span>Back to Dashboard</a>
+</div>
+</body>
+</html>

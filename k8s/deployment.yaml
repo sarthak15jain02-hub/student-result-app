@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-result-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: student-result-app
+  template:
+    metadata:
+      labels:
+        app: student-result-app
+    spec:
+      containers:
+      - name: student-result-app
+        image: sarthak1502/student-result-app:latest
+        ports:
+        - containerPort: 5000

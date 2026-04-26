@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login | Student Result System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Roboto',sans-serif; background:linear-gradient(135deg,#1a73e8,#0d47a1); min-height:100vh; display:flex; align-items:center; justify-content:center; }
+    .card { background:white; border-radius:12px; padding:48px 40px; width:380px; box-shadow:0 8px 32px rgba(0,0,0,0.2); }
+    .logo { text-align:center; margin-bottom:32px; }
+    .logo .material-icons { font-size:56px; color:#1a73e8; }
+    .logo h1 { font-size:22px; font-weight:500; color:#202124; margin-top:8px; }
+    .logo p { font-size:13px; color:#5f6368; margin-top:4px; }
+    .input-group { margin-bottom:20px; position:relative; }
+    .input-group label { display:block; font-size:12px; font-weight:500; color:#5f6368; margin-bottom:6px; text-transform:uppercase; letter-spacing:.5px; }
+    .input-group input { width:100%; padding:12px 16px; border:1.5px solid #dadce0; border-radius:8px; font-size:15px; outline:none; transition:.2s; }
+    .input-group input:focus { border-color:#1a73e8; box-shadow:0 0 0 3px rgba(26,115,232,.1); }
+    .btn { width:100%; padding:13px; background:#1a73e8; color:white; border:none; border-radius:8px; font-size:15px; font-weight:500; cursor:pointer; letter-spacing:.3px; transition:.2s; margin-top:8px; }
+    .btn:hover { background:#1557b0; box-shadow:0 4px 12px rgba(26,115,232,.4); }
+    .error { background:#fce8e6; color:#d93025; padding:10px 14px; border-radius:6px; font-size:13px; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+    .hint { text-align:center; margin-top:20px; font-size:12px; color:#9aa0a6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <span class="material-icons">school</span>
+      <h1>Student Result System</h1>
+      <p>DevOps Final Project</p>
+    </div>
+    {% if error %}
+    <div class="error"><span class="material-icons" style="font-size:16px">error</span>{{ error }}</div>
+    {% endif %}
+    <form method="post">
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter username" required autofocus>
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password" required>
+      </div>
+      <button class="btn" type="submit">Sign In</button>
+    </form>
+    <div class="hint">Use admin / admin123 to login</div>
+  </div>
+</body>
+</html>
